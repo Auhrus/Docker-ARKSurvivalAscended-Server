@@ -24,7 +24,7 @@ RUN mkdir -p "/home/steam/Steam/compatibilitytools.d" \
 	&& tar -xvf "GE-Proton.tar.gz" -C "/home/steam/Steam/compatibilitytools.d"
 
 RUN mkdir -p "/home/steam/Steam/steamapps/compatdata/2430930" \
-	mkidir -p "/home/steam/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/ShooterGame/Saved/" \
+	mkdir -p "/home/steam/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/ShooterGame/Saved/" \
 	&& cp "/home/steam/Steam/compatibilitytools.d/GE-Proton8-21/files/share/default_pfx" "/home/steam/Steam/steamapps/compatdata/2430930" -r
 
 
