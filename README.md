@@ -19,7 +19,7 @@ Notice: Due to the fact that I can only upload Docker container images of up to 
 
 2. Run this command. This will retrieve the required files from the GitHub repository and create the image. (with Docker already installed)
 ```bash
-docker build https://github.com/Auhrus/pathoftitans-docker-server.git#main -t ghcr.io/auhrus/ark-ascended-server:latest
+docker build https://github.com/Auhrus/Dockerized-ARKSurvivalAscended-Server.git#main -t ghcr.io/auhrus/ark-ascended-server:latest
 ```
 3. After the process is complete, run this command.
 ```bash
