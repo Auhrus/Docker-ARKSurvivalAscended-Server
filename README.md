@@ -23,7 +23,7 @@ docker build https://github.com/Auhrus/Dockerized-ARKSurvivalAscended-Server.git
 ```
 3. After the process is complete, run this command.
 ```bash
-docker run --name CONAINER_NAME -p 8888:8888/udp -p 27015:27015/udp -v VOLUME_NAME:/home/steam/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/ShooterGame/Saved ghcr.io/auhrus/ark-ascended-server:latest
+docker run --name CONAINER_NAME -p 8888:8888/udp -p 27015:27015/udp -v VOLUME_NAME:"/home/steam/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/ShooterGame/Saved" ghcr.io/auhrus/ark-ascended-server:latest
 ```
 Please replace all things written in CAPS.
 
