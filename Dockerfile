@@ -19,12 +19,12 @@ RUN apt update \
 	&& apt install steam-launcher -y
 
 RUN mkdir -p "/home/steam/Steam/compatibilitytools.d" \
-	&& wget -O "GE-Proton.tar.gz" -P "/home/steam/Steam/compatibilitytools.d" "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton8-21/GE-Proton8-21.tar.gz" \
+	&& wget -O "GE-Proton.tar.gz" -P "/home/steam/Steam/compatibilitytools.d" "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton8-22/GE-Proton8-22.tar.gz" \
 	&& tar -xvf "GE-Proton.tar.gz" -C "/home/steam/Steam/compatibilitytools.d"
 
 RUN mkdir -p "/home/steam/Steam/steamapps/compatdata/2430930" \
 	mkdir -p "/home/steam/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/" \
-	&& cp "/home/steam/Steam/compatibilitytools.d/GE-Proton8-21/files/share/default_pfx" "/home/steam/Steam/steamapps/compatdata/2430930" -r
+	&& cp "/home/steam/Steam/compatibilitytools.d/GE-Proton8-22/files/share/default_pfx" "/home/steam/Steam/steamapps/compatdata/2430930" -r
 
 COPY ./serverstart.sh /home/steam/serverstart.sh
 
