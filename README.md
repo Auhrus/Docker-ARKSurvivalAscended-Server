@@ -23,7 +23,7 @@ docker build https://github.com/Auhrus/Dockerized-ARKSurvivalAscended-Server.git
 ```
 3. After the process is complete, run this command.
 ```bash
-docker run --name CONAINER_NAME -p 8888:8888/udp -p 27015:27015/udp -v VOLUME_NAME:"/home/steam/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/ShooterGame/Saved" ghcr.io/auhrus/ark-ascended-server:latest
+docker run --name CONAINER_NAME -p 8888:8888/udp -p 27015:27015/udp -v VOLUME_NAME:"/home/steam/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/" ghcr.io/auhrus/ark-ascended-server:latest
 ```
 Please replace all things written in CAPS.
 
@@ -41,6 +41,7 @@ To run this project, you will need to set the following environment variables.
 | Variable      | Function      | Default |
 |:------------- |:-------------:|:-------------|
 | `startcommands`       |Here you can add (if needed) additional commands to start the server.|TheIsland_WP?listen|
+| `updateonstart`       |Defines whether the server should check for updates at every start.|false|
 | `USER`       |(can be ignored) Defines which user is worked with.|steam|
 | `HOMEDIR`       |(can be ignored) Defines where the Steam launcher is installed.|/home/steam|
 | `STEAMCMDDIR`       |(can be ignored) Defines what the SteamCMD is installed in.|/home/steam/steamcmd|
@@ -48,7 +49,7 @@ To run this project, you will need to set the following environment variables.
 
 The server start command:
 ```bash
-STEAM_COMPAT_CLIENT_INSTALL_PATH="/home/steam/Steam/" STEAM_COMPAT_DATA_PATH="/home/steam/Steam/steamapps/compatdata/2430930" "/home/steam/Steam/compatibilitytools.d/GE-Proton8-21/proton" run "/home/steam/Steam/steamapps/common/ARK Survival Ascended Dedicated Server\ShooterGame\Binaries\Win64\ArkAscendedServer.exe" $startcommands
+STEAM_COMPAT_CLIENT_INSTALL_PATH="/home/steam/Steam/" STEAM_COMPAT_DATA_PATH="/home/steam/Steam/steamapps/compatdata/2430930" "/home/steam/Steam/compatibilitytools.d/GE-Proton8-22/proton" run "/home/steam/Steam/steamapps/common/ARK Survival Ascended Dedicated Server\ShooterGame\Binaries\Win64\ArkAscendedServer.exe" $startcommands
 ```
 
 
@@ -56,11 +57,14 @@ STEAM_COMPAT_CLIENT_INSTALL_PATH="/home/steam/Steam/" STEAM_COMPAT_DATA_PATH="/h
 
 How do i update my ASA Server to a newer Version?
 
-1. First stop and remove the existing Container.
+When you have `updateonstart` on true you just need to restart the container an the Update gets downloaded.
+
+When you have `updateonstart` on false:
+1. Stop and remove the existing Container.
 ```bash
 docker stop CONAINER_NAME && docker rm CONAINER_NAME
 ```
-2. Then create him again like in the [Deployment👩‍💻](https://github.com/Auhrus/Dockerized-ARKSurvivalAscended-Server?tab=readme-ov-file#deployment) with the same Volumes.
+2. Then create him again like in the [Deployment👩‍💻](https://github.com/Auhrus/Dockerized-ARKSurvivalAscended-Server?tab=readme-ov-file#deployment) from Step 3 on with the same Volumes.
 
 ## Support❤️
 
