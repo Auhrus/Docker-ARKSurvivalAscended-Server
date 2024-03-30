@@ -1,9 +1,7 @@
 FROM cm2network/steamcmd:root
 
-MAINTAINER "https://github.com/Auhrus"
-
-LABEL org.opencontainers.image.source https://github.com/Auhrus/Dockerized-ARKSurvivalAscended-Server
-LABEL maintainer https://github.com/Auhrus
+LABEL org.opencontainers.image.source="https://github.com/Auhrus/Dockerized-ARKSurvivalAscended-Server"
+LABEL maintainer="https://github.com/Auhrus"
 
 EXPOSE 7777-7777 27015-27015/udp
 
@@ -15,7 +13,7 @@ RUN apt update && dpkg --add-architecture i386 && apt install software-propertie
 RUN curl -s http://repo.steampowered.com/steam/archive/stable/steam.gpg > /usr/share/keyrings/steam.gpg \
     && echo "deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] http://repo.steampowered.com/steam/ stable steam" > /etc/apt/sources.list.d/steam.list
 
-RUN apt update && apt install steam-launcher -y
+RUN apt update && apt install steam-launcher -y && apt clean
 
 RUN mkdir -p "/home/steam/Steam/compatibilitytools.d" \
     && curl -o "GE-Proton.tar.gz" -sLOJ "$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest | grep browser_download_url | cut -d\" -f4 | egrep .tar.gz)" \
