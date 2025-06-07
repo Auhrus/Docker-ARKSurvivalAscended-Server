@@ -15,7 +15,7 @@ How to install this Docker Container
 
 1. Install Docker on your Server. Here you can find a guide [[here]](https://duckduckgo.com/?t=ffab&q=How+to+install+Docker+on+Ubuntu)
 
-Note: Since I can only upload Docker container images of up to 500 MB on GitHub without paying anything, and the image is 3.4 GB in total, the image is on [Docker Hub](https://hub.docker.com/r/auhrus/arksurvivalascended-server)
+**Note:** Since I can only upload Docker container images of up to 500 MB on GitHub without paying anything, and the image is 3.4 GB in total, the image is on [Docker Hub](https://hub.docker.com/r/auhrus/arksurvivalascended-server)
 
 2. Run this command. This will retrieve the required files from the Docker Hub repository and create the image. (with Docker already installed)
 ```bash
@@ -23,7 +23,7 @@ docker pull auhrus/arksurvivalascended-server:latest
 ```
 3. After the process is complete, run this command.
 ```bash
-docker run --name CONAINER_NAME -p 8888:8888/udp -p 27015:27015/udp -v VOLUME_NAME:"/home/steam/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/" auhrus/arksurvivalascended-server:latest
+docker run --name CONAINER_NAME -p 7777:7777/udp -p 27015:27015/udp -v VOLUME_NAME:"/home/steam/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/" auhrus/arksurvivalascended-server:latest
 ```
 Please replace all things written in CAPS.
 
@@ -64,7 +64,7 @@ When you have `updateonstart` on false:
 ```bash
 docker stop CONAINER_NAME && docker rm CONAINER_NAME
 ```
-2. Then create him again like in the [Deployment👩‍💻](https://github.com/Auhrus/Docker-ARKSurvivalAscended-Server?tab=readme-ov-file#deployment) from Step 3 on with the same Volumes.
+2. Then create him again like in the [Deployment👩‍💻](https://github.com/Auhrus/Docker-ARKSurvivalAscended-Server?tab=readme-ov-file#deployment) from Step 3 on with the same Volume.
 
 ## Support❤️
 
